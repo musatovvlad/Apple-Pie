@@ -400,9 +400,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CorrectWorldLabel" destination="2sp-P6-kUs" id="1hM-RB-2ZG"/>
                         <outlet property="ScoreLabel" destination="n1H-kX-ujp" id="0IS-Tt-wwX"/>
                         <outlet property="TreeImageView" destination="TXt-F4-FNn" id="8e9-xv-Xdk"/>
+                        <outlet property="correctWordLabel" destination="2sp-P6-kUs" id="1hM-RB-2ZG"/>
                         <outletCollection property="LetterButtons" destination="a4w-Y2-Z8P" collectionClass="NSMutableArray" id="6iT-pi-ozo"/>
                         <outletCollection property="LetterButtons" destination="hGc-tS-pnh" collectionClass="NSMutableArray" id="wbw-F1-ebh"/>
                         <outletCollection property="LetterButtons" destination="hGc-tS-pnh" collectionClass="NSMutableArray" id="Mmv-hR-TN2"/>

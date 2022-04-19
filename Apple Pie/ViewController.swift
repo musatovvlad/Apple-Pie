@@ -11,13 +11,13 @@ class ViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet weak var TreeImageView: UIImageView!
     @IBOutlet var LetterButtons: [UIButton]!
-    @IBOutlet weak var CorrectWorldLabel: UILabel!
+    @IBOutlet weak var correctWordLabel: UILabel!
     @IBOutlet weak var ScoreLabel: UILabel!
     
     //MARK: Properties
     var currentGame: Game!
     let inCorrectMovesAllowed = 7 // number of attempts
-    let listOfCapital = [
+    var listOfCapital = [
         "Абу-Даби",
         "Абуджа",
         "Аддис-Абеба",
@@ -176,49 +176,56 @@ class ViewController: UIViewController {
         "Сингапур",
         "Скопье",
         "София",
-        "Степанакерт",
-        "Стокгольм",
-        "Сукре",
-        "Сухум",
-        "Тайбэй",
-        "Таллин",
-        "Ташкент",
-        "Тбилиси",
-        "Тегеран",
-        "Тегусигальпа",
-        "Тирана",
-        "Тирасполь",
-        "Токио",
-        "Триполи",
-        "Тунис",
-        "Тхимпху",
-        "Уагадугу",
-        "Улан-Батор",
-        "Фритаун",
-        "Ханой",
-        "Хараре",
-        "Хартум",
-        "Хельсинки",
-        "Цхинвал",
-        "Эль-Кувейт",
-        "Эр-Рияд",
-        "Ямусукро",
-        "Яунде",
-    ]
+    ].shuffled()
     
-    var totalWins = 0
-    var totalLosses = 0
+    var totalWins = 0 {
+        didSet{
+            newRound()
+        }
+    }
+    var totalLosses = 0 {
+        didSet {
+            newRound()
+        }
+    }
     
     // MARK: Methods
-    func newRound (){
-        let newCapital = listOfCapital.randomElement()
-        currentGame = Game(capital: newCapital!, incorrectMowesRemaining: inCorrectMovesAllowed)
-        updateUI()
+    func enableButtons (_enable: Bool = true){
+        for button in LetterButtons {
+            button.isEnabled = _enable
+        }
     }
+    
+        
+    func newRound (){
+        guard !listOfCapital.isEmpty else { // возврат при завершении массива слов
+            enableButtons(_enable: false)
+            updateUI()
+            return
+        }
+        
+        let newCapital = listOfCapital.removeFirst()
+        currentGame = Game(capital: newCapital, incorrectMovesRemaining: inCorrectMovesAllowed)
+        updateUI()
+        enableButtons()
+    }
+    func updateState(){
+        if currentGame.incorrectMovesRemaining < 1 {
+            totalLosses += 1
+        } else if currentGame.guessedWord == currentGame.capital{
+            totalWins += 1
+        }else{
+        updateUI()
+        }
+    }
+    
     func updateUI(){
-        let mowesRemaining = currentGame.incorrectMowesRemaining
-        let image = "Tree\(mowesRemaining < 8 ? mowesRemaining: 7 )" //image name to display
+        let movesRemaining = currentGame.incorrectMovesRemaining
+        let imageNumber =  (movesRemaining + 64) % 8
+        print(imageNumber)
+        let image = "Tree\(imageNumber)" //image name to display
         TreeImageView.image = UIImage(named: image)
+        correctWordLabel.text = currentGame.guessedWord
         ScoreLabel.text = "Выигрыши \(totalWins), проигрыши \(totalLosses)"
     
     }
@@ -233,8 +240,12 @@ class ViewController: UIViewController {
     //MARK: IB Actions
     @IBAction func LetterButtonsPressed(_ sender: UIButton) {
         sender.isEnabled = false
+       let letter = sender.title(for: .normal)!
+        currentGame.playerGuessed(letter: Character(letter))
+       updateState()
     }
     
     
-}
+  }
+
 
