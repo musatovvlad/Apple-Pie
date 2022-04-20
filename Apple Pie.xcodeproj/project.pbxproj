@@ -14,6 +14,8 @@
 		F55466BA2805F210002D65FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55466B92805F210002D65FB /* Assets.xcassets */; };
 		F55466BD2805F210002D65FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55466BB2805F210002D65FB /* LaunchScreen.storyboard */; };
 		F5646F5B28075E4E00D72D1F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5646F5A28075E4E00D72D1F /* Game.swift */; };
+		F5F6E8DA2810930300B99C68 /* Снимок экрана 2022-04-20 в 22.00.22.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6E8D82810930300B99C68 /* Снимок экрана 2022-04-20 в 22.00.22.png */; };
+		F5F6E8DB2810930300B99C68 /* Снимок экрана 2022-04-20 в 22.05.40.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6E8D92810930300B99C68 /* Снимок экрана 2022-04-20 в 22.05.40.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F55466BC2805F210002D65FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F55466BE2805F210002D65FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5646F5A28075E4E00D72D1F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F5F6E8D82810930300B99C68 /* Снимок экрана 2022-04-20 в 22.00.22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2022-04-20 в 22.00.22.png"; sourceTree = "<group>"; };
+		F5F6E8D92810930300B99C68 /* Снимок экрана 2022-04-20 в 22.05.40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2022-04-20 в 22.05.40.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 		F55466AF2805F20E002D65FB /* Apple Pie */ = {
 			isa = PBXGroup;
 			children = (
+				F5F6E8D72810929400B99C68 /* Screenshots */,
+				F5F6E8D82810930300B99C68 /* Снимок экрана 2022-04-20 в 22.00.22.png */,
+				F5F6E8D92810930300B99C68 /* Снимок экрана 2022-04-20 в 22.05.40.png */,
 				F55466B02805F20E002D65FB /* AppDelegate.swift */,
 				F55466B92805F210002D65FB /* Assets.xcassets */,
 				F5646F5A28075E4E00D72D1F /* Game.swift */,
@@ -68,6 +75,13 @@
 				F55466B42805F20E002D65FB /* ViewController.swift */,
 			);
 			path = "Apple Pie";
+			sourceTree = "<group>";
+		};
+		F5F6E8D72810929400B99C68 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +142,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F6E8DA2810930300B99C68 /* Снимок экрана 2022-04-20 в 22.00.22.png in Resources */,
 				F55466BD2805F210002D65FB /* LaunchScreen.storyboard in Resources */,
 				F55466BA2805F210002D65FB /* Assets.xcassets in Resources */,
 				F55466B82805F20E002D65FB /* Main.storyboard in Resources */,
+				F5F6E8DB2810930300B99C68 /* Снимок экрана 2022-04-20 в 22.05.40.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

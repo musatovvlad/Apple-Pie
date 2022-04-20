@@ -196,7 +196,7 @@ class ViewController: UIViewController {
         }
     }
     
-        
+    
     func newRound (){
         guard !listOfCapital.isEmpty else { // возврат при завершении массива слов
             enableButtons(_enable: false)
@@ -215,7 +215,7 @@ class ViewController: UIViewController {
         } else if currentGame.guessedWord == currentGame.capital{
             totalWins += 1
         }else{
-        updateUI()
+            updateUI()
         }
     }
     
@@ -227,7 +227,7 @@ class ViewController: UIViewController {
         TreeImageView.image = UIImage(named: image)
         correctWordLabel.text = currentGame.guessedWord
         ScoreLabel.text = "Выигрыши \(totalWins), проигрыши \(totalLosses)"
-    
+        
     }
     
     override func viewDidLoad() {
@@ -240,12 +240,12 @@ class ViewController: UIViewController {
     //MARK: IB Actions
     @IBAction func LetterButtonsPressed(_ sender: UIButton) {
         sender.isEnabled = false
-       let letter = sender.title(for: .normal)!
+        let letter = sender.title(for: .normal)!
         currentGame.playerGuessed(letter: Character(letter))
-       updateState()
+        updateState()
     }
     
     
-  }
+}
 
 
